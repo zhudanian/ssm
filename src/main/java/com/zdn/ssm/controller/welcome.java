@@ -16,7 +16,7 @@ public class welcome {
     @RequestMapping("login")
     public String login(String name, String password) {
         User user = userService.findNameAndPass(name, password);
-        if (user == null) {
+        if (user != null) {
             return "/success";
         } else {
             return "/welcome";
